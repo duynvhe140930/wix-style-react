@@ -34,8 +34,12 @@ export function createColumns({ tableProps, bulkSelectionContext }) {
       render: (row, rowNum) => {
         const id = defaultTo(row.id, rowNum);
         return row.unselectable ? null : (
-          <div onClick={e => e.stopPropagation()}>
+          <div
+            onClick={e => e.stopPropagation()}
+            className={style.checkboxContainer}
+          >
             <Checkbox
+              className={style.checkbox}
               disabled={disabled}
               dataHook="row-select"
               checked={isSelected(id)}
@@ -45,6 +49,7 @@ export function createColumns({ tableProps, bulkSelectionContext }) {
         );
       },
       width: '12px',
+      style: { padding: 0, height: '1px', width: '50px' },
     };
   };
 

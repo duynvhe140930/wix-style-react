@@ -29,6 +29,23 @@
   -st-states: titleBarVisible;
 }
 
+.checkboxContainer {
+  height: 100%;
+}
+
+.checkbox {
+  width: 100%;
+  height: 100%;
+}
+
+.checkbox label {
+  width: 100%;
+  cursor: pointer;
+}
+.checkbox label > div {
+  margin-left: 23px;
+}
+
 .content:not(:first-child):not(:titleBarVisible) {
   border-top: 1px solid value(D60);
 }
