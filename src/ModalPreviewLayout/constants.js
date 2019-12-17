@@ -10,5 +10,7 @@ export const dataHooks = {
   modalPreviewContent: 'preview-modal-content',
   overlay: 'preview-modal-overlay',
   innerOverlay: 'preview-modal-inner-overlay',
+  modalPreviewRightArrow: 'preview-modal-right-arrow',
+  modalPreviewLeftArrow: 'preview-modal-left-arrow',
   ...modalPreviewIDs,
 };
