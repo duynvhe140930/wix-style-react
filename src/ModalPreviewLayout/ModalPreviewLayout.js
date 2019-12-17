@@ -1,8 +1,6 @@
 import React from 'react';
 import { string, node, oneOfType, arrayOf, func, bool } from 'prop-types';
 import X from 'wix-ui-icons-common/X';
-// import ChevronLeft from 'wix-ui-icons-common/ChevronLeft';
-// import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 import Text from '../Text';
 import IconButton from '../IconButton';
 import styles from './ModalPreviewLayout.st.css';
