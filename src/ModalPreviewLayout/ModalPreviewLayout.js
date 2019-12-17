@@ -50,6 +50,7 @@ class ModalPreviewLayout extends React.PureComponent {
     const { dataHook, actions, title, children, onClose } = this.props;
     const { childIndexDisplayed } = this.state;
     const isMultipleChildNodes = children.length > 0;
+    const isLastChildNode = childIndexDisplayed < children.length - 1;
 
     return (
       <div
@@ -108,7 +109,7 @@ class ModalPreviewLayout extends React.PureComponent {
           >
             {isMultipleChildNodes ? children[childIndexDisplayed] : children}
           </div>
-          {childIndexDisplayed < children.length - 1 && (
+          {isLastChildNode && (
             <div className={styles.rightArrow}>
               <IconButton
                 as="button"
