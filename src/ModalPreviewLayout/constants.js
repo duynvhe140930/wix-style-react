@@ -14,3 +14,8 @@ export const dataHooks = {
   modalPreviewLeftArrow: 'preview-modal-left-arrow',
   ...modalPreviewIDs,
 };
+
+export const arrowsDirection = {
+  rightArrow: 'preview-modal-right-arrow',
+  leftArrow: 'preview-modal-left-arrow',
+};

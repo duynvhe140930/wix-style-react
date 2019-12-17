@@ -28,6 +28,44 @@ import { Category } from '../../../stories/storiesHierarchy';
 
 const code = config => baseCode({ components: allComponents, ...config });
 
+const wrapperProps = {
+  width: '95vw',
+  height: '95vh',
+  align: 'center',
+  verticalAlign: 'middle',
+  backgroundColor: 'D80',
+};
+
+const childrenNodesExamples = [
+  {
+    label: 'Single child node',
+    value: (
+      <Box
+        width="95vw"
+        height="95vh"
+        align="center"
+        verticalAlign="middle"
+        backgroundColor="D80"
+      >
+        This is the content!
+      </Box>
+    ),
+  },
+  {
+    label: 'Multiple child nodes',
+    value: ['first', 'second', 'third'].map(ordinalNum => (
+      <Box
+        width="95vw"
+        height="95vh"
+        align="center"
+        verticalAlign="middle"
+        backgroundColor="D80"
+        children={`This is the ${ordinalNum} content page`}
+      />
+    )),
+  },
+];
+
 export default {
   category: storySettings.category,
   storyName: 'ModalPreviewLayout',
@@ -41,18 +79,12 @@ export default {
   ),
   componentProps: {
     title: 'Basic Website Design',
-    children: (
-      <Box
-        width="95vw"
-        height="95vh"
-        align="center"
-        verticalAlign="middle"
-        backgroundColor="D80"
-      >
-        This is the content!
-      </Box>
-    ),
+    children: childrenNodesExamples[0].value,
     shouldCloseOnOverlayClick: true,
+  },
+
+  exampleProps: {
+    children: childrenNodesExamples,
   },
 
   sections: [
