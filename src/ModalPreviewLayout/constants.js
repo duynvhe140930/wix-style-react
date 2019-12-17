@@ -16,6 +16,6 @@ export const dataHooks = {
 };
 
 export const arrowsDirection = {
-  rightArrow: 'preview-modal-right-arrow',
-  leftArrow: 'preview-modal-left-arrow',
+  rightArrow: 'right-arrow',
+  leftArrow: 'left-arrow',
 };

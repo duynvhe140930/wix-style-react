@@ -1,12 +1,13 @@
 import React from 'react';
 import { string, node, oneOfType, arrayOf, func, bool } from 'prop-types';
 import X from 'wix-ui-icons-common/X';
-import ChevronLeft from 'wix-ui-icons-common/ChevronLeft';
-import ChevronRight from 'wix-ui-icons-common/ChevronRight';
+// import ChevronLeft from 'wix-ui-icons-common/ChevronLeft';
+// import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 import Text from '../Text';
 import IconButton from '../IconButton';
 import styles from './ModalPreviewLayout.st.css';
 import { dataHooks, modalPreviewIDs, arrowsDirection } from './constants';
+import NavigationButton from './NavigationButton/NavigationButton';
 
 /** This is a fullscreen modal to present a document to the user overlaying the entire view port */
 class ModalPreviewLayout extends React.PureComponent {
@@ -92,16 +93,10 @@ class ModalPreviewLayout extends React.PureComponent {
           className={styles.innerOverlay}
         >
           {childIndexDisplayed && (
-            <div className={styles.leftArrow}>
-              <IconButton
-                as="button"
-                onClick={() => this._onArrowClick(arrowsDirection.leftArrow)}
-                skin="transparent"
-                dataHook={dataHooks.modalPreviewLeftArrow}
-              >
-                <ChevronLeft />
-              </IconButton>
-            </div>
+            <NavigationButton
+              direction={arrowsDirection.leftArrow}
+              onClick={() => this._onArrowClick(arrowsDirection.leftArrow)}
+            />
           )}
           <div
             data-hook={dataHooks.modalPreviewContent}
@@ -110,16 +105,10 @@ class ModalPreviewLayout extends React.PureComponent {
             {isMultipleChildNodes ? children[childIndexDisplayed] : children}
           </div>
           {isLastChildNode && (
-            <div className={styles.rightArrow}>
-              <IconButton
-                as="button"
-                onClick={() => this._onArrowClick(arrowsDirection.rightArrow)}
-                skin="transparent"
-                dataHook={dataHooks.modalPreviewRightArrow}
-              >
-                <ChevronRight />
-              </IconButton>
-            </div>
+            <NavigationButton
+              direction={arrowsDirection.rightArrow}
+              onClick={() => this._onArrowClick(arrowsDirection.rightArrow)}
+            />
           )}
         </div>
       </div>
