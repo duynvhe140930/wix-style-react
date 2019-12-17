@@ -1,28 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, node, oneOfType, arrayOf, func, bool } from 'prop-types';
 import X from 'wix-ui-icons-common/X';
 import Text from '../Text';
 import IconButton from '../IconButton';
 import styles from './ModalPreviewLayout.st.css';
-
-const OVERLAY_ID = 'preview-modal-overlay';
-const INNER_OVERLAY_ID = 'preview-modal-inner-overlay';
+import { dataHooks, modalPreviewIDs } from './constants';
 
 /** This is a fullscreen modal to present a document to the user overlaying the entire view port */
 class ModalPreviewLayout extends React.PureComponent {
   static displayName = 'ModalPreviewLayout';
 
   static propTypes = {
-    dataHook: PropTypes.string,
+    dataHook: string,
     /** component to be displayed in header strip to preform actions relevant to the displayed content */
-    actions: PropTypes.node,
+    actions: node,
     /** title text to be displayed in the header strip */
-    title: PropTypes.string,
+    title: string,
     /** modal content displayed mid-screen*/
-    children: PropTypes.node.isRequired,
+    children: oneOfType([node, arrayOf(node)]).isRequired,
     /** callback for when the modal is closed */
-    onClose: PropTypes.func.isRequired,
-    shouldCloseOnOverlayClick: PropTypes.bool,
+    onClose: func.isRequired,
+    shouldCloseOnOverlayClick: bool,
   };
 
   static defaultProps = {
@@ -32,7 +30,7 @@ class ModalPreviewLayout extends React.PureComponent {
   shouldClose(id) {
     return (
       this.props.shouldCloseOnOverlayClick &&
-      [OVERLAY_ID, INNER_OVERLAY_ID].includes(id)
+      Object.values(modalPreviewIDs).includes(id)
     );
   }
 
@@ -40,7 +38,7 @@ class ModalPreviewLayout extends React.PureComponent {
     const { dataHook, actions, title, children, onClose } = this.props;
     return (
       <div
-        id={OVERLAY_ID}
+        id={modalPreviewIDs.overlay}
         className={styles.overlay}
         onClick={({ target: { id } }) => {
           if (this.shouldClose(id) && typeof onClose === 'function') {
@@ -49,12 +47,15 @@ class ModalPreviewLayout extends React.PureComponent {
         }}
       >
         <div data-hook={dataHook} className={styles.header}>
-          <div data-hook="preview-modal-title" className={styles.title}>
+          <div data-hook={dataHooks.modalPreviewTitle} className={styles.title}>
             <Text light ellipsis>
               {title}
             </Text>
           </div>
-          <div className={styles.actions} data-hook="preview-modal-actions">
+          <div
+            className={styles.actions}
+            data-hook={dataHooks.modalPreviewActions}
+          >
             {actions}
           </div>
           <div className={styles.closeButton}>
@@ -63,18 +64,21 @@ class ModalPreviewLayout extends React.PureComponent {
               onClick={onClose}
               priority="secondary"
               skin="transparent"
-              dataHook="preview-modal-close-button"
+              dataHook={dataHooks.modalPreviewCloseButton}
             >
               <X />
             </IconButton>
           </div>
         </div>
         <div
-          id={INNER_OVERLAY_ID}
-          data-hook={INNER_OVERLAY_ID}
+          id={modalPreviewIDs.innerOverlay}
+          data-hook={dataHooks.innerOverlay}
           className={styles.innerOverlay}
         >
-          <div data-hook="preview-modal-content" className={styles.content}>
+          <div
+            data-hook={dataHooks.modalPreviewContent}
+            className={styles.content}
+          >
             {children}
           </div>
         </div>
