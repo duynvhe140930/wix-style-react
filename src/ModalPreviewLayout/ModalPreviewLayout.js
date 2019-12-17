@@ -35,7 +35,7 @@ class ModalPreviewLayout extends React.PureComponent {
   shouldClose(id) {
     return (
       this.props.shouldCloseOnOverlayClick &&
-      Object.values(modalPreviewIDs).includes(id)
+      [modalPreviewIDs.overlay, modalPreviewIDs.innerOverlay].includes(id)
     );
   }
 
