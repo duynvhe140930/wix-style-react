@@ -81,6 +81,7 @@ export default {
     title: 'Basic Website Design',
     children: childrenNodesExamples[0].value,
     shouldCloseOnOverlayClick: true,
+    onClose: () => null,
   },
 
   exampleProps: {
