@@ -75,18 +75,12 @@
   display: none;
 }
 
-.left-arrow {
-  left: 12px;
-}
-
-.right-arrow {
-  right: 12px;
-}
-
 .overlay:hasLeft .navigationButton.left-arrow{
   display: block;
+  left: 12px;
 }
 
 .overlay:hasRight .navigationButton.right-arrow{
   display: block;
+  right: 12px;
 }

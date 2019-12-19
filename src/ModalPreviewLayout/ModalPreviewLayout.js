@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, node, oneOfType, arrayOf, func, bool } from 'prop-types';
+import { string, node, func, bool } from 'prop-types';
 import X from 'wix-ui-icons-common/X';
 import Text from '../Text';
 import IconButton from '../IconButton';
@@ -20,7 +20,7 @@ class ModalPreviewLayout extends React.PureComponent {
     /** modal content displayed mid-screen*/
 
     //TODO: check type of multiple children
-    children: oneOfType([node, arrayOf(node)]).isRequired,
+    children: node.isRequired,
     /** callback for when the modal is closed */
     onClose: func.isRequired,
     /** */
@@ -47,6 +47,14 @@ class ModalPreviewLayout extends React.PureComponent {
       : this.setState({ childIndexDisplayed: childIndexDisplayed - 1 });
   }
 
+  _onOverlayClick(onClose) {
+    return ({ target: { id } }) => {
+      if (this.shouldClose(id) && typeof onClose === 'function') {
+        onClose();
+      }
+    };
+  }
+
   render() {
     const { dataHook, actions, title, children, onClose } = this.props;
     const { childIndexDisplayed } = this.state;
@@ -59,11 +67,7 @@ class ModalPreviewLayout extends React.PureComponent {
       <div
         id={modalPreviewIDs.overlay}
         {...styles('overlay', { hasLeft, hasRight }, this.props)}
-        onClick={({ target: { id } }) => {
-          if (this.shouldClose(id) && typeof onClose === 'function') {
-            onClose();
-          }
-        }}
+        onClick={this._onOverlayClick(onClose)}
       >
         <div data-hook={dataHook} className={styles.header}>
           <div data-hook={dataHooks.modalPreviewTitle} className={styles.title}>
