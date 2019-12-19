@@ -1,21 +1,23 @@
-export const modalPreviewIDs = {
-  overlay: 'preview-modal-overlay',
-  innerOverlay: 'preview-modal-inner-overlay',
-};
+const modalPrefix = 'preview-modal';
 
-export const dataHooks = {
-  modalPreviewActions: 'preview-modal-actions',
-  modalPreviewCloseButton: 'preview-modal-close-button',
-  modalPreviewTitle: 'preview-modal-title',
-  modalPreviewContent: 'preview-modal-content',
-  overlay: 'preview-modal-overlay',
-  innerOverlay: 'preview-modal-inner-overlay',
-  modalPreviewRightArrow: 'preview-modal-right-arrow',
-  modalPreviewLeftArrow: 'preview-modal-left-arrow',
-  ...modalPreviewIDs,
+export const modalPreviewIDs = {
+  overlay: `${modalPrefix}-overlay`,
+  innerOverlay: `${modalPrefix}-inner-overlay`,
 };
 
 export const arrowsDirection = {
   rightArrow: 'right-arrow',
   leftArrow: 'left-arrow',
+};
+
+export const dataHooks = {
+  modalPreviewActions: `${modalPrefix}-actions`,
+  modalPreviewCloseButton: `${modalPrefix}-close-button`,
+  modalPreviewTitle: `${modalPrefix}-title`,
+  modalPreviewContent: `${modalPrefix}-content`,
+  overlay: `${modalPrefix}-overlay`,
+  innerOverlay: `${modalPrefix}-inner-overlay`,
+  modalPreviewRightArrow: `${modalPrefix}-${arrowsDirection.rightArrow}`,
+  modalPreviewLeftArrow: `${modalPrefix}-${arrowsDirection.leftArrow}`,
+  ...modalPreviewIDs,
 };
