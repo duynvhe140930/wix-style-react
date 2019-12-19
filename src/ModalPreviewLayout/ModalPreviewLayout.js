@@ -18,6 +18,8 @@ class ModalPreviewLayout extends React.PureComponent {
     /** title text to be displayed in the header strip */
     title: string,
     /** modal content displayed mid-screen*/
+
+    //TODO: check type of multiple children
     children: oneOfType([node, arrayOf(node)]).isRequired,
     /** callback for when the modal is closed */
     onClose: func.isRequired,
@@ -48,14 +50,15 @@ class ModalPreviewLayout extends React.PureComponent {
   render() {
     const { dataHook, actions, title, children, onClose } = this.props;
     const { childIndexDisplayed } = this.state;
-    const isMultipleChildNodes = children.length > 0;
-    const isFirstChildNode = childIndexDisplayed > 0;
-    const isLastChildNode = childIndexDisplayed < children.length - 1;
+
+    const childrenArr = React.Children.toArray(children);
+    const hasLeft = childIndexDisplayed > 0;
+    const hasRight = childIndexDisplayed < childrenArr.length - 1;
 
     return (
       <div
         id={modalPreviewIDs.overlay}
-        className={styles.overlay}
+        {...styles('overlay', { hasLeft, hasRight }, this.props)}
         onClick={({ target: { id } }) => {
           if (this.shouldClose(id) && typeof onClose === 'function') {
             onClose();
@@ -95,21 +98,17 @@ class ModalPreviewLayout extends React.PureComponent {
             data-hook={dataHooks.modalPreviewContent}
             className={styles.content}
           >
-            {isFirstChildNode && (
-              <NavigationButton
-                direction={arrowsDirection.leftArrow}
-                onClick={() => this._onArrowClick(arrowsDirection.leftArrow)}
-              />
-            )}
+            <NavigationButton
+              direction={arrowsDirection.leftArrow}
+              onClick={() => this._onArrowClick(arrowsDirection.leftArrow)}
+            />
 
-            {isMultipleChildNodes ? children[childIndexDisplayed] : children}
+            {childrenArr[childIndexDisplayed]}
 
-            {isLastChildNode && (
-              <NavigationButton
-                direction={arrowsDirection.rightArrow}
-                onClick={() => this._onArrowClick(arrowsDirection.rightArrow)}
-              />
-            )}
+            <NavigationButton
+              direction={arrowsDirection.rightArrow}
+              onClick={() => this._onArrowClick(arrowsDirection.rightArrow)}
+            />
           </div>
         </div>
       </div>

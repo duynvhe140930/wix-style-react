@@ -4,9 +4,10 @@ import ChevronLeft from 'wix-ui-icons-common/ChevronLeft';
 import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 import { arrowsDirection } from '../constants';
 import styles from '../ModalPreviewLayout.st.css';
+import classNames from 'classnames';
 
 const NavigationButton = ({ direction, onClick }) => (
-  <div className={styles.navigationButton}>
+  <div className={classNames(styles.navigationButton, styles[direction])}>
     <IconButton
       as="button"
       onClick={onClick}

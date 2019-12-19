@@ -28,14 +28,6 @@ import { Category } from '../../../stories/storiesHierarchy';
 
 const code = config => baseCode({ components: allComponents, ...config });
 
-const wrapperProps = {
-  width: '95vw',
-  height: '95vh',
-  align: 'center',
-  verticalAlign: 'middle',
-  backgroundColor: 'D80',
-};
-
 const childrenNodesExamples = [
   {
     label: 'Single child node',

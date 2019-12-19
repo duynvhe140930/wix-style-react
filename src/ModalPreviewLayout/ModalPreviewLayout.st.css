@@ -11,6 +11,7 @@
 }
 
 .overlay {
+  -st-states: hasLeft, hasRight;
   width: 100vw;
   height: 100vh;
   justify-content: center;
@@ -60,7 +61,6 @@
 .content {
   margin-top: value(verticalMargins);
   position: relative;
-
 }
 
 .content::after {
@@ -72,4 +72,21 @@
 .navigationButton {
   position: absolute;
   top: calc(50vh - value(headerHeight));
+  display: none;
+}
+
+.left-arrow {
+  left: 12px;
+}
+
+.right-arrow {
+  right: 12px;
+}
+
+.overlay:hasLeft .navigationButton.left-arrow{
+  display: block;
+}
+
+.overlay:hasRight .navigationButton.right-arrow{
+  display: block;
 }
