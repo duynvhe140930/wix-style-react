@@ -49,6 +49,7 @@ class ModalPreviewLayout extends React.PureComponent {
     const { dataHook, actions, title, children, onClose } = this.props;
     const { childIndexDisplayed } = this.state;
     const isMultipleChildNodes = children.length > 0;
+    const isFirstChildNode = childIndexDisplayed > 0;
     const isLastChildNode = childIndexDisplayed < children.length - 1;
 
     return (
@@ -90,24 +91,26 @@ class ModalPreviewLayout extends React.PureComponent {
           data-hook={dataHooks.innerOverlay}
           className={styles.innerOverlay}
         >
-          {childIndexDisplayed && (
-            <NavigationButton
-              direction={arrowsDirection.leftArrow}
-              onClick={() => this._onArrowClick(arrowsDirection.leftArrow)}
-            />
-          )}
           <div
             data-hook={dataHooks.modalPreviewContent}
             className={styles.content}
           >
+            {isFirstChildNode && (
+              <NavigationButton
+                direction={arrowsDirection.leftArrow}
+                onClick={() => this._onArrowClick(arrowsDirection.leftArrow)}
+              />
+            )}
+
             {isMultipleChildNodes ? children[childIndexDisplayed] : children}
+
+            {isLastChildNode && (
+              <NavigationButton
+                direction={arrowsDirection.rightArrow}
+                onClick={() => this._onArrowClick(arrowsDirection.rightArrow)}
+              />
+            )}
           </div>
-          {isLastChildNode && (
-            <NavigationButton
-              direction={arrowsDirection.rightArrow}
-              onClick={() => this._onArrowClick(arrowsDirection.rightArrow)}
-            />
-          )}
         </div>
       </div>
     );

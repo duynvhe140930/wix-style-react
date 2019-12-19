@@ -6,7 +6,7 @@ import { arrowsDirection } from '../constants';
 import styles from '../ModalPreviewLayout.st.css';
 
 const NavigationButton = ({ direction, onClick }) => (
-  <div className={styles[direction]}>
+  <div className={styles.navigationButton}>
     <IconButton
       as="button"
       onClick={onClick}

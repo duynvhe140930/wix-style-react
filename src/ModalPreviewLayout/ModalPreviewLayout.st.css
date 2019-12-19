@@ -59,6 +59,8 @@
 
 .content {
   margin-top: value(verticalMargins);
+  position: relative;
+
 }
 
 .content::after {
@@ -67,6 +69,7 @@
   display: block;
 }
 
-.rightArrow {}
-
-.leftArrow {}
+.navigationButton {
+  position: absolute;
+  top: calc(50vh - value(headerHeight));
+}
