@@ -12,18 +12,17 @@ class ModalPreviewLayout extends React.PureComponent {
   static displayName = 'ModalPreviewLayout';
 
   static propTypes = {
+    /** Applied as data-hook HTML attribute that can be used in the tests */
     dataHook: string,
     /** component to be displayed in header strip to preform actions relevant to the displayed content */
     actions: node,
     /** title text to be displayed in the header strip */
     title: string,
     /** modal content displayed mid-screen*/
-
-    //TODO: check type of multiple children
     children: node.isRequired,
     /** callback for when the modal is closed */
     onClose: func.isRequired,
-    /** */
+    /** boolean to determine whether closing the overlay on click */
     shouldCloseOnOverlayClick: bool,
   };
 
@@ -53,6 +52,22 @@ class ModalPreviewLayout extends React.PureComponent {
         onClose();
       }
     };
+  }
+
+  _renderNavigationButtons() {
+    return (
+      <React.Fragment>
+        <NavigationButton
+          direction={arrowsDirection.leftArrow}
+          onClick={() => this._onArrowClick(arrowsDirection.leftArrow)}
+        />
+
+        <NavigationButton
+          direction={arrowsDirection.rightArrow}
+          onClick={() => this._onArrowClick(arrowsDirection.rightArrow)}
+        />
+      </React.Fragment>
+    );
   }
 
   render() {
@@ -102,18 +117,10 @@ class ModalPreviewLayout extends React.PureComponent {
             data-hook={dataHooks.modalPreviewContent}
             className={styles.content}
           >
-            <NavigationButton
-              direction={arrowsDirection.leftArrow}
-              onClick={() => this._onArrowClick(arrowsDirection.leftArrow)}
-            />
-
             {childrenArr[childIndexDisplayed]}
-
-            <NavigationButton
-              direction={arrowsDirection.rightArrow}
-              onClick={() => this._onArrowClick(arrowsDirection.rightArrow)}
-            />
           </div>
+
+          {this._renderNavigationButtons()}
         </div>
       </div>
     );
