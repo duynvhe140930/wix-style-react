@@ -18,7 +18,7 @@
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   background: value(D10);
   height: value(headerHeight);
   width: 100%;
@@ -52,9 +52,7 @@
 .innerOverlay {
   display: flex;
   justify-content: center;
-  top: value(headerHeight);
   height: calc(100vh - value(headerHeight));
-  position: relative;
   overflow-y: auto;
 }
 
@@ -71,16 +69,16 @@
 
 .navigationButton {
   position: absolute;
-  top: calc(50vh - value(headerHeight));
+  top: 50vh;
   display: none;
 }
 
 .overlay:hasLeft .navigationButton.left-arrow{
   display: block;
-  left: 12px;
+  left: 36px;
 }
 
 .overlay:hasRight .navigationButton.right-arrow{
   display: block;
-  right: 12px;
+  right: 36px;
 }
