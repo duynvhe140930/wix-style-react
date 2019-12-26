@@ -65,6 +65,9 @@ class PopoverMenu extends Component {
       x: number,
       y: number,
     }),
+
+    /** add data-hook for button*/
+    dataHook: string,
   };
 
   static defaultProps = {

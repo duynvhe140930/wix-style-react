@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import ListItemAction from '../../ListItemAction';
 import DropdownBase from '../../DropdownBase';
 import { placements } from '../../Popover';
@@ -93,6 +93,9 @@ class PopoverMenu extends React.PureComponent {
 
     /** Whether to show the Popover's arrow */
     showArrow: PropTypes.bool,
+
+    /** add data-hook for button*/
+    dataHook: string,
   };
 
   static defaultProps = {
