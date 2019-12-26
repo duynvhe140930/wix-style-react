@@ -116,6 +116,7 @@ class ModalPreviewLayout extends React.PureComponent {
           <div
             data-hook={dataHooks.modalPreviewContent}
             className={styles.content}
+            data-index={childIndexDisplayed}
           >
             {childrenArr[childIndexDisplayed]}
           </div>
