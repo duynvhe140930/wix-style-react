@@ -1,6 +1,6 @@
 :import {
     -st-from: "../Foundation/stylable/typography.st.css";
-    -st-named: fontMedium;
+    -st-named: weightBold;
 }
 
 :import {
@@ -78,7 +78,7 @@
 }
 
 .root .text {
-  font-family: value(fontMedium);
+  -st-mixin: weightBold;
   font-size: 10px;
   line-height: 12px;
   letter-spacing: 1px;

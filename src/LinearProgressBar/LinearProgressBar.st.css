@@ -5,7 +5,7 @@
 
 :import {
   -st-from: "../Foundation/stylable/typography.st.css";
-  -st-named: fontMedium;
+  -st-named: weightBold;
 }
 
 :import {
@@ -64,6 +64,7 @@
 }
 
 .root::indicationContainer {
+  -st-mixin: weightBold;
   width: 18px;
   height: 18px;
   border-radius: 12px;
@@ -72,7 +73,6 @@
   align-items: center;
   color: value(D20);
   font-size: 10px;
-  font-family: value(fontMedium);
 }
 
 .root:skin(standard):success::indicationContainer {

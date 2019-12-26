@@ -1,3 +1,4 @@
+@import '../../src/Typography/Typography.scss';
 @import '../common.scss';
 
 $suffixHorizontalPadding: 12px;
@@ -92,9 +93,9 @@ $childrenMargin: 6px;
 }
 
 .asterisk {
+  @extend .text.sizeMedium.weightThin;
   display: inline-block;
   color: $B20;
-  font-family: $FontLight;
   font-size: 22px;
   margin-left: 6px;
   margin-top: -4px;

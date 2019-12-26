@@ -13,7 +13,7 @@
 
 :import {
     -st-from: "../Foundation/stylable/typography.st.css";
-    -st-named: fontMedium;
+    -st-named: weightBold;
 }
 
 .progressBar {
@@ -74,7 +74,7 @@
 
 .root .progressBar::progressIndicator {
     color: value(D20);
-    font-family: value(fontMedium);
+  -st-mixin: weightBold;
     font-size: 10px;
     font-weight: 500;
     margin-top: 18px;

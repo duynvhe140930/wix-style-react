@@ -5,7 +5,7 @@
 
 :import {
   -st-from: "../Foundation/stylable/typography.st.css";
-  -st-named: fontRoman, fontMedium;
+  -st-named: weightNormal, weightBold;
 }
 
 .root {
@@ -13,35 +13,35 @@
 }
 
 .root:appearance(H1) {
-  font-family: value(fontMedium);
+  -st-mixin: weightBold;
   font-size: 36px;
   line-height: 48px;
   color: value(D10);
 }
 
 .root:appearance(H2) {
-  font-family: value(fontMedium);
+  -st-mixin: weightBold;
   font-size: 28px;
   line-height: 36px;
   color: value(D10);
 }
 
 .root:appearance(H3) {
-  font-family: value(fontRoman);
+  -st-mixin: weightNormal;
   font-size: 20px;
   line-height: 24px;
   color: value(D10);
 }
 
 .root:appearance(H4) {
-  font-family: value(fontRoman);
+  -st-mixin: weightNormal;
   font-size: 18px;
   line-height: 24px;
   color: value(D10);
 }
 
 .root:appearance(H5) {
-  font-family: value(fontMedium);
+  -st-mixin: weightBold;
   font-size: 12px;
   line-height: 24px;
   color: value(D20);
@@ -50,7 +50,7 @@
 }
 
 .root:appearance(H6) {
-  font-family: value(fontMedium);
+  -st-mixin: weightBold;
   font-size: 10px;
   line-height: 18px;
   color: value(D10);
