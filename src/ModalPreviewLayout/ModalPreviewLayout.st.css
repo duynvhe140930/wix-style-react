@@ -10,7 +10,7 @@
   verticalMargins: 24px;
 }
 
-.overlay {
+.root {
   -st-states: hasLeft, hasRight;
   width: 100vw;
   height: 100vh;
@@ -73,12 +73,12 @@
   display: none;
 }
 
-.overlay:hasLeft .navigationButton.left-arrow{
+.root:hasLeft .navigationButton.left-arrow{
   display: block;
   left: 36px;
 }
 
-.overlay:hasRight .navigationButton.right-arrow{
+.root:hasRight .navigationButton.right-arrow{
   display: block;
   right: 36px;
 }

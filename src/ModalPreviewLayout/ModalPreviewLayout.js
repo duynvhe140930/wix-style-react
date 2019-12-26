@@ -81,7 +81,7 @@ class ModalPreviewLayout extends React.PureComponent {
     return (
       <div
         id={modalPreviewIDs.overlay}
-        {...styles('overlay', { hasLeft, hasRight }, this.props)}
+        {...styles('root', { hasLeft, hasRight }, this.props)}
         onClick={this._onOverlayClick(onClose)}
       >
         <div data-hook={dataHook} className={styles.header}>

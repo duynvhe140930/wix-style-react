@@ -28,32 +28,27 @@ import { Category } from '../../../stories/storiesHierarchy';
 
 const code = config => baseCode({ components: allComponents, ...config });
 
+const ContentExample = ({ children }) => (
+  <Box
+    width="90vw"
+    height="95vh"
+    align="center"
+    verticalAlign="middle"
+    backgroundColor="D80"
+  >
+    {children}
+  </Box>
+);
+
 const childrenNodesExamples = [
   {
     label: 'Single child node',
-    value: (
-      <Box
-        width="95vw"
-        height="95vh"
-        align="center"
-        verticalAlign="middle"
-        backgroundColor="D80"
-      >
-        This is the content!
-      </Box>
-    ),
+    value: <ContentExample children="This is the content!" />,
   },
   {
     label: 'Multiple child nodes',
     value: ['first', 'second', 'third'].map(ordinalNum => (
-      <Box
-        width="95vw"
-        height="95vh"
-        align="center"
-        verticalAlign="middle"
-        backgroundColor="D80"
-        children={`This is the ${ordinalNum} content page`}
-      />
+      <ContentExample children={`This is the ${ordinalNum} content page`} />
     )),
   },
 ];
