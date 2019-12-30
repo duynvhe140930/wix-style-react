@@ -16,6 +16,7 @@ A collection of React components that conform to Wix Style.
 [![](https://badgen.net/npm/v/wix-style-react/latest)](https://www.npmjs.com/package/wix-style-react)
 [![Dependencies](https://img.shields.io/david/wix/wix-style-react.svg?style=flat-square)](https://david-dm.org/wix/wix-style-react)
 [![DevDependencies](https://img.shields.io/david/dev/ant-design/ant-design.svg?style=flat-square)](https://david-dm.org/wix/wix-style-react?type=dev)
+[![Swimm](https://us-central1-swimmio.cloudfunctions.net/badge?repo_url=https://github.com/swimmio/wix-style-react)](https://swimm.io)
 
 </div>
 
