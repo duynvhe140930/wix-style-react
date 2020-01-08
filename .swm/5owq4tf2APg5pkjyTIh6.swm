@@ -1,0 +1,11 @@
+{
+  "diff": "ZGlmZiAtLWdpdCBhL3NyYy9BdXRvQ29tcGxldGVXaXRoTGFiZWwvQXV0b0NvbXBsZXRlV2l0aExhYmVsLnVuaS5kcml2ZXIuanMgYi9zcmMvQXV0b0NvbXBsZXRlV2l0aExhYmVsL0F1dG9Db21wbGV0ZVdpdGhMYWJlbC51bmkuZHJpdmVyLmpzCmluZGV4IGMwNTljNDE0Li4zM2I3ZjkxYiAxMDA2NDQKLS0tIGEvc3JjL0F1dG9Db21wbGV0ZVdpdGhMYWJlbC9BdXRvQ29tcGxldGVXaXRoTGFiZWwudW5pLmRyaXZlci5qcworKysgYi9zcmMvQXV0b0NvbXBsZXRlV2l0aExhYmVsL0F1dG9Db21wbGV0ZVdpdGhMYWJlbC51bmkuZHJpdmVyLmpzCkBAIC0yOSw3ICsyOSw2IEBAIGV4cG9ydCBjb25zdCBhdXRvQ29tcGxldGVXaXRoTGFiZWxEcml2ZXJGYWN0b3J5ID0gYmFzZSA9PiB7CiAgICAgICByZXR1cm4gZHJvcGRvd25MYXlvdXREcml2ZXIuY2xpY2tBdE9wdGlvbldpdGhWYWx1ZSh2YWx1ZSk7CiAgICAgfSwKICAgICBjbGlja01lbnVBcnJvdzogKCkgPT4gaW5wdXREcml2ZXIuY2xpY2tNZW51QXJyb3coKSwKLSAgICBpc0Rpc2FibGVkOiBhc3luYyAoKSA9PiBpbnB1dERyaXZlci5pc0Rpc2FibGVkKCksCiAgICAgYmx1cjogKCkgPT4gaW5wdXREcml2ZXIuYmx1cigpLAogICAgIGhhc0Vycm9yOiAoKSA9PiBpbnB1dERyaXZlci5oYXNFcnJvcigpLAogICB9Owo=", 
+  "tests": [
+    "npx yoshi test AutoCompleteWithLabel"
+  ], 
+  "name": "Adding a Driver prop", 
+  "hints": [
+    "Run the tests, see what happens...", 
+    "Changed files: AutoCompleteWithLabel.uni.driver.js"
+  ]
+}
