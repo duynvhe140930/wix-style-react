@@ -1,0 +1,11 @@
+{
+  "diff": "ZGlmZiAtLWdpdCBhL3NyYy9EaXZpZGVyL0RpdmlkZXIuanMgYi9zcmMvRGl2aWRlci9EaXZpZGVyLmpzCmluZGV4IGRjYTczMTkyLi4wODk3Y2Y2NiAxMDA2NDQKLS0tIGEvc3JjL0RpdmlkZXIvRGl2aWRlci5qcworKysgYi9zcmMvRGl2aWRlci9EaXZpZGVyLmpzCkBAIC0yMiwxNiArMjIsNyBAQCBjbGFzcyBEaXZpZGVyIGV4dGVuZHMgUmVhY3QuUHVyZUNvbXBvbmVudCB7CiAgICAgc2tpbjogc2tpbnMubGlnaHQsCiAgIH07CiAKLSAgcmVuZGVyKCkgewotICAgIGNvbnN0IHsgZGF0YUhvb2ssIGRpcmVjdGlvbiwgc2tpbiB9ID0gdGhpcy5wcm9wczsKIAotICAgIHJldHVybiAoCi0gICAgICA8aHIKLSAgICAgICAgZGF0YS1ob29rPXtkYXRhSG9va30KLSAgICAgICAgey4uLnN0eWxlcygncm9vdCcsIHsgZGlyZWN0aW9uLCBza2luIH0sIHRoaXMucHJvcHMpfQotICAgICAgLz4KLSAgICApOwotICB9CiB9CiAKIGV4cG9ydCBkZWZhdWx0IERpdmlkZXI7Cg==", 
+  "tests": [
+    ""
+  ], 
+  "name": "implement the render method", 
+  "hints": [
+    "Run the tests, see what happens...", 
+    "Changed files: Divider.js"
+  ]
+}
