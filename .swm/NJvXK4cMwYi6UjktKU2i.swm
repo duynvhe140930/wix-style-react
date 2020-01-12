@@ -1,0 +1,11 @@
+{
+  "diff": "ZGlmZiAtLWdpdCBhL3NyYy9Td2F0Y2hlcy9Td2F0Y2hlcy51bmkuZHJpdmVyLmpzIGIvc3JjL1N3YXRjaGVzL1N3YXRjaGVzLnVuaS5kcml2ZXIuanMKaW5kZXggZGRlNzEyYTYuLmRkNWZmMWMyIDEwMDY0NAotLS0gYS9zcmMvU3dhdGNoZXMvU3dhdGNoZXMudW5pLmRyaXZlci5qcworKysgYi9zcmMvU3dhdGNoZXMvU3dhdGNoZXMudW5pLmRyaXZlci5qcwpAQCAtMjYsMTAgKzI2LDYgQEAgZXhwb3J0IGNvbnN0IHN3YXRjaGVzRHJpdmVyRmFjdG9yeSA9IGJhc2UgPT4gewogICAgICAgcmV0dXJuIGZpbGxQcmV2aWV3RHJpdmVyRmFjdG9yeShhd2FpdCBnZXRTd2F0Y2goaW5kZXgpKS5pc1NlbGVjdGVkKCk7CiAgICAgfSwKIAotICAgIC8qKiBUZXN0IGlmIGVtcHR5IHN3YXRjaCBpcyBzZWxlY3RlZCAqLwotICAgIGlzRW1wdHlTd2F0Y2hTZWxlY3RlZDogYXN5bmMgKCkgPT4gewotICAgICAgcmV0dXJuIGZpbGxQcmV2aWV3RHJpdmVyRmFjdG9yeShhd2FpdCBnZXRFbXB0eVN3YXRjaCgpKS5pc1NlbGVjdGVkKCk7Ci0gICAgfSwKIAogICAgIGFkZEJ1dHRvbkV4aXN0czogYXN5bmMgKCkgPT4KICAgICAgIGJhc2UuJCQoJ1tkYXRhLWhvb2s9ImNvbG9yLXByZXZpZXctYWRkLWJ1dHRvbiJdJykuY291bnQoKSA9PT0gMSwK", 
+  "tests": [
+    ""
+  ], 
+  "name": "Add a Driver method", 
+  "hints": [
+    "Run the tests, see what happens...", 
+    "Changed files: Swatches.uni.driver.js"
+  ]
+}
